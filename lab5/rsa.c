@@ -41,7 +41,9 @@ long int inverse(long int a, long int b)
 
 double encrypt(double msg,long int e, long int n)
 {
-    return fmod(pow(msg,e),n);
+    double t = e;
+    double t2 = n;
+    return fmod(pow(msg,t),t2);
 }
 
 
@@ -51,8 +53,8 @@ long int main()
     srand(time(NULL));
 
     //Two prime numbers
-    long int p = 5;
-    long int q = 7;
+    long int p = 11;
+    long int q = 3;
     
     //Generating other variables from p and q
     long int n = p*q;
@@ -73,7 +75,7 @@ long int main()
     //printf("Test %d\n", (d*e)%phi);
     //
     
-    double message = 3;
+    double message = 5;
     printf("Message is %lf\n",message);
 
     double encrpt_msg = encrypt(message,e,n);
